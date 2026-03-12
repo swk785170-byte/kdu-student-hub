@@ -33,9 +33,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
       }}
     >
       <div className="flex-between" style={{ padding: '0 0.5rem', marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.25rem', margin: 0, background: 'linear-gradient(to right, #6366F1, #818CF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          KDU Hub
-        </h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <img src="/kdu-logo.png" alt="KDU Logo" style={{ height: '40px', width: 'auto' }} />
+          <h2 style={{ fontSize: '1.25rem', margin: 0, background: 'linear-gradient(to right, #6366F1, #818CF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            KDU Hub
+          </h2>
+        </div>
         <button className="btn-icon-only sidebar-close-btn" onClick={() => setIsOpen(false)}>
           <X size={20} />
         </button>
