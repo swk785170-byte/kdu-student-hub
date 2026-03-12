@@ -34,7 +34,7 @@ export default function Forum() {
       </div>
 
       {showNewPost && (
-        <div className="card glass animate-fade-in" style={{ marginBottom: '2rem' }}>
+        <div className="card animate-fade-in" style={{ marginBottom: '2rem' }}>
           <h3 style={{ marginTop: 0 }}>Create a new discussion</h3>
           <form onSubmit={handleCreatePost}>
             <div className="input-group">
@@ -67,7 +67,7 @@ export default function Forum() {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {posts.length === 0 ? (
-          <div className="card flex-center" style={{ flexDirection: 'column', padding: '4rem 2rem', borderStyle: 'dashed' }}>
+          <div className="card flex-center" style={{ flexDirection: 'column', padding: '4rem 2rem', borderStyle: 'dashed', borderColor: 'var(--border-light)' }}>
             <MessageSquare size={40} color="var(--text-secondary)" style={{ marginBottom: '1rem' }} />
             <h3 style={{ margin: 0, marginBottom: '0.5rem' }}>No discussions yet</h3>
             <p>Be the first to start a conversation manually.</p>

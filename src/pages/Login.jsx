@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <div className="app-layout flex-center">
-      <div className="card glass animate-fade-in" style={{ width: '100%', maxWidth: '400px' }}>
+      <div className="card animate-fade-in" style={{ width: '100%', maxWidth: '400px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2>Welcome Back</h2>
           <p>Login to KDU Student Hub</p>

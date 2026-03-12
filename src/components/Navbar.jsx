@@ -14,7 +14,7 @@ export default function Navbar() {
         alignItems: 'center', 
         justifyContent: 'space-between',
         padding: '0 2rem',
-        borderBottom: '1px solid var(--border-color)',
+        borderBottom: '1px solid var(--border-light)',
         position: 'sticky',
         top: 0,
         zIndex: 10
@@ -26,7 +26,7 @@ export default function Navbar() {
           type="text" 
           placeholder="Search notes, subjects..." 
           className="input-field" 
-          style={{ paddingLeft: '2.5rem', borderRadius: '20px', backgroundColor: 'rgba(0,0,0,0.2)' }}
+          style={{ paddingLeft: '2.5rem', borderRadius: '20px', backgroundColor: 'rgba(255, 255, 255, 0.05)', boxShadow: 'none' }}
         />
       </div>
 
@@ -34,12 +34,12 @@ export default function Navbar() {
         <button className="btn-icon-only">
           <Bell size={20} />
         </button>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1rem', borderLeft: '1px solid var(--border-color)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1rem', borderLeft: '1px solid var(--border-light)' }}>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: '0.9rem', fontWeight: 500 }}>{user?.name || 'Student'}</div>
+            <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{user?.name || 'Student'}</div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>KDU Scholar</div>
           </div>
-          <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--accent-glow)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)' }}>
+          <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(139, 92, 246, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-hover)', border: '1px solid rgba(139, 92, 246, 0.5)' }}>
             <UserIcon size={20} />
           </div>
         </div>

@@ -90,10 +90,10 @@ export default function DocumentViewer() {
       <div style={{ display: 'flex', gap: '2rem', flex: 1, minHeight: 0 }}>
         {/* Viewer Area */}
         <div className="card" style={{ flex: 3, padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-hover)' }}>
+          <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-light)', backgroundColor: 'var(--bg-hover)' }}>
             <h4 style={{ margin: 0 }}>{isPdf ? 'PDF Viewer' : 'Document Viewer (Mock)'}</h4>
           </div>
-          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e1e1e', overflow: 'auto' }}>
+          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.3)', overflow: 'auto' }}>
             {blobUrl ? (
               <iframe 
                 src={blobUrl} 
@@ -122,7 +122,7 @@ export default function DocumentViewer() {
           
           <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1rem' }}>
             {comments.map(c => (
-              <div key={c.id} style={{ backgroundColor: 'var(--bg-hover)', padding: '1rem', borderRadius: '8px' }}>
+              <div key={c.id} style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-light)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                   <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{c.author}</span>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{c.date}</span>
@@ -139,7 +139,7 @@ export default function DocumentViewer() {
               placeholder="Add a comment..." 
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              style={{ flex: 1 }}
+              style={{ flex: 1, backgroundColor: 'rgba(255, 255, 255, 0.05)', boxShadow: 'none' }}
             />
             <button className="btn" type="submit" style={{ padding: '0.75rem' }} disabled={!comment.trim()}>
               <Send size={18} />

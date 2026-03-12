@@ -49,8 +49,8 @@ export default function Hub() {
       </div>
 
       {filteredFiles.length === 0 ? (
-        <div className="card flex-center" style={{ flexDirection: 'column', padding: '4rem 2rem', borderStyle: 'dashed' }}>
-          <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'var(--bg-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
+        <div className="card flex-center" style={{ flexDirection: 'column', padding: '4rem 2rem', borderStyle: 'dashed', borderColor: 'var(--border-light)' }}>
+          <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
             <FileText size={40} />
           </div>
           <h3 style={{ margin: 0, marginBottom: '0.5rem' }}>No documents found</h3>
@@ -84,7 +84,7 @@ export default function Hub() {
                       {file.name}
                     </h4>
                     {!subjectId && subject && (
-                      <span style={{ fontSize: '0.8rem', color: 'var(--accent-primary)', backgroundColor: 'var(--accent-glow)', padding: '0.2rem 0.6rem', borderRadius: '12px', display: 'inline-block', marginTop: '0.4rem' }}>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-primary)', backgroundColor: 'rgba(139, 92, 246, 0.2)', padding: '0.2rem 0.6rem', borderRadius: '12px', display: 'inline-block', marginTop: '0.4rem', border: '1px solid rgba(139, 92, 246, 0.4)' }}>
                         {subject.icon} {subject.name}
                       </span>
                     )}
@@ -103,14 +103,14 @@ export default function Hub() {
                   </div>
                 </div>
 
-                <div style={{ marginTop: 'auto', display: 'flex', gap: '0.5rem', borderTop: '1px solid var(--border-color)', paddingTop: '1rem' }}>
+                <div style={{ marginTop: 'auto', display: 'flex', gap: '0.5rem', borderTop: '1px solid var(--border-light)', paddingTop: '1rem' }}>
                   <Link to={`/view/${file.id}`} className="btn btn-secondary" style={{ flex: 1, padding: '0.5rem', fontSize: '0.85rem' }}>
                     <Eye size={16} /> View
                   </Link>
                   <button className="btn btn-secondary" style={{ padding: '0.5rem', fontSize: '0.85rem' }}>
                     <Download size={16} />
                   </button>
-                  <button className="btn-icon-only" onClick={() => deleteFile(file.id)} style={{ padding: '0.5rem', color: 'var(--danger)' }} title="Delete">
+                  <button className="btn-icon-only" onClick={() => deleteFile(file.id)} style={{ padding: '0.5rem', color: 'var(--danger)', backgroundColor: 'rgba(255, 75, 75, 0.05)' }} title="Delete">
                     <Trash2 size={16} />
                   </button>
                 </div>

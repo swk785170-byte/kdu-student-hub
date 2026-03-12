@@ -28,7 +28,7 @@ export default function Sidebar() {
         width: '260px', 
         display: 'flex', 
         flexDirection: 'column',
-        borderRight: '1px solid var(--border-color)',
+        borderRight: '1px solid var(--border-light)',
         padding: '1.5rem 1rem'
       }}
     >
@@ -100,7 +100,7 @@ export default function Sidebar() {
             ))}
             
             {isAddingSubject && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem', backgroundColor: 'var(--bg-hover)', borderRadius: '8px', marginTop: '0.25rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem', backgroundColor: 'rgba(255, 255, 255, 0.05)', borderRadius: '8px', marginTop: '0.25rem', border: '1px solid var(--border-light)' }}>
                 <input 
                   type="text" 
                   value={newSubjectName}
@@ -125,7 +125,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border-light)', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
         <button 
           className="btn-secondary" 
           onClick={logout}

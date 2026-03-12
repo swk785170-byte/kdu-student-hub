@@ -34,7 +34,7 @@ export default function Register() {
 
   return (
     <div className="app-layout flex-center">
-      <div className="card glass animate-fade-in" style={{ width: '100%', maxWidth: '400px' }}>
+      <div className="card animate-fade-in" style={{ width: '100%', maxWidth: '400px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2>Create Account</h2>
           <p>Join the KDU Student Hub</p>
