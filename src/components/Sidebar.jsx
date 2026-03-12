@@ -4,7 +4,7 @@ import { Folder, MessageSquare, LogOut, Plus, Check, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }) {
   const { logout } = useAuth();
   const { subjects, addSubject } = useData();
   const [isAddingSubject, setIsAddingSubject] = useState(false);
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <div 
-      className="glass" 
+      className={`glass sidebar ${isOpen ? 'open' : ''}`}
       style={{ 
         width: '260px', 
         display: 'flex', 
@@ -32,10 +32,13 @@ export default function Sidebar() {
         padding: '1.5rem 1rem'
       }}
     >
-      <div style={{ padding: '0 0.5rem', marginBottom: '2rem' }}>
+      <div className="flex-between" style={{ padding: '0 0.5rem', marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', margin: 0, background: 'linear-gradient(to right, #6366F1, #818CF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           KDU Hub
         </h2>
+        <button className="btn-icon-only sidebar-close-btn" onClick={() => setIsOpen(false)}>
+          <X size={20} />
+        </button>
       </div>
 
       <div style={{ flex: 1, overflowY: 'auto' }}>

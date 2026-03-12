@@ -87,9 +87,9 @@ export default function DocumentViewer() {
         </button>
       </div>
 
-      <div style={{ display: 'flex', gap: '2rem', flex: 1, minHeight: 0 }}>
+      <div className="viewer-container" style={{ flex: 1, minHeight: 0 }}>
         {/* Viewer Area */}
-        <div className="card" style={{ flex: 3, padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div className="card viewer-main" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
           <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-light)', backgroundColor: 'var(--bg-hover)' }}>
             <h4 style={{ margin: 0 }}>{isPdf ? 'PDF Viewer' : 'Document Viewer (Mock)'}</h4>
           </div>
@@ -115,7 +115,7 @@ export default function DocumentViewer() {
         </div>
 
         {/* Comments Sidebar */}
-        <div className="card" style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '1.5rem' }}>
+        <div className="card viewer-sidebar" style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem' }}>
           <h3 style={{ margin: 0, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <MessageSquare size={18} /> Comments
           </h3>

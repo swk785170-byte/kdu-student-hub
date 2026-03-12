@@ -255,3 +255,85 @@ p {
   margin-bottom: 1rem;
   color: var(--text-secondary);
 }
+
+/* Document Viewer Layout Defaults */
+.viewer-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.viewer-main {
+  flex: 3;
+}
+
+.viewer-sidebar {
+  flex: 1;
+}
+
+/* Mobile Visibility Utilities */
+.mobile-menu-btn {
+  display: none;
+}
+
+.sidebar-close-btn {
+  display: none;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .sidebar-close-btn {
+    display: inline-flex;
+    color: var(--text-primary);
+  }
+
+  /* Off-canvas Sidebar */
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Navbar Adjustments */
+  .search-container {
+    display: none !important; /* Hide search bar on mobile for space */
+  }
+
+  .user-info-text {
+    display: none; /* Hide name/title, keep only avatar */
+  }
+
+  /* General stacking */
+  .flex-between {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Document Viewer Stacking */
+  .viewer-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .viewer-main {
+    flex: none;
+    height: 60vh; /* Fixed height for PDF viewer on mobile to allow scrolling below */
+  }
+
+  .viewer-sidebar {
+    flex: none;
+    height: 50vh; /* Fixed height for comments */
+  }
+}

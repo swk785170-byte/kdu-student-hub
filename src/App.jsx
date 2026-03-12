@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
@@ -25,12 +25,14 @@ function ProtectedRoute({ children }) {
 }
 
 function MainLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <DataProvider>
       <div className="app-layout">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
         <div className="main-content">
-          <Navbar />
+          <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
           <Routes>
             <Route path="/" element={<Hub />} />
             <Route path="/subject/:subjectId" element={<Hub />} />
