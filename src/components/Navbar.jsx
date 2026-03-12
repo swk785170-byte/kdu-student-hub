@@ -1,0 +1,49 @@
+import React from 'react';
+import { Search, Bell, User as UserIcon } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+
+export default function Navbar() {
+  const { user } = useAuth();
+
+  return (
+    <div 
+      className="glass" 
+      style={{ 
+        height: '70px', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'space-between',
+        padding: '0 2rem',
+        borderBottom: '1px solid var(--border-color)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 10
+      }}
+    >
+      <div style={{ position: 'relative', width: '300px' }}>
+        <Search size={18} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
+        <input 
+          type="text" 
+          placeholder="Search notes, subjects..." 
+          className="input-field" 
+          style={{ paddingLeft: '2.5rem', borderRadius: '20px', backgroundColor: 'rgba(0,0,0,0.2)' }}
+        />
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <button className="btn-icon-only">
+          <Bell size={20} />
+        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1rem', borderLeft: '1px solid var(--border-color)' }}>
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ fontSize: '0.9rem', fontWeight: 500 }}>{user?.name || 'Student'}</div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>KDU Scholar</div>
+          </div>
+          <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--accent-glow)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)' }}>
+            <UserIcon size={20} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
