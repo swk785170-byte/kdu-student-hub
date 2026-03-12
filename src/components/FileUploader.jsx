@@ -110,7 +110,6 @@ export default function FileUploader({ onClose }) {
           onDrop={handleDrop}
           onClick={(e) => {
             if (!selectedFile) {
-              e.preventDefault();
               onButtonClick();
             }
           }}
